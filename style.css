@@ -1,0 +1,169 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1220;
+  --panel: #121b2e;
+  --line: #24314d;
+  --accent: #5eead4;
+  --accent2: #f472b6;
+  --text: #e6edf7;
+  --muted: #8ea0c2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% -10%, #16213a 0%, var(--bg) 60%);
+  color: var(--text);
+  font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hud {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 20px;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.score .label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.score span#playerScore,
+.score span#cpuScore {
+  font-size: 2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.mid {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+  flex: 1;
+}
+
+.canvas-wrap {
+  position: relative;
+  width: 100%;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #0a1626;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  cursor: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(6, 10, 20, 0.72);
+  border-radius: 12px;
+}
+
+.overlay[hidden] {
+  display: none;
+}
+
+.overlay-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px 32px;
+  text-align: center;
+  max-width: 360px;
+}
+
+.overlay-card h2 {
+  margin: 0 0 8px;
+  color: var(--accent);
+}
+
+.overlay-card p {
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+.difficulty {
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.difficulty select {
+  background: #0a1626;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin-left: 6px;
+}
+
+#startBtn {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0a1626;
+  cursor: pointer;
+}
+
+#startBtn:hover {
+  filter: brightness(1.08);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin: 0;
+}
