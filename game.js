@@ -96,7 +96,7 @@
     "wheel",
     (e) => {
       e.preventDefault();
-      state.player.y = clamp(state.player.y + e.deltaY * WHEEL_SENSITIVITY, 0, H - PADDLE_H);
+      state.player.y = clamp(state.player.y - e.deltaY * WHEEL_SENSITIVITY, 0, H - PADDLE_H);
     },
     { passive: false }
   );
