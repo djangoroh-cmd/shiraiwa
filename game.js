@@ -90,6 +90,17 @@
     state.player.y = clamp(y - PADDLE_H / 2, 0, H - PADDLE_H);
   });
 
+  // Input: mouse wheel
+  const WHEEL_SENSITIVITY = 0.6;
+  canvas.addEventListener(
+    "wheel",
+    (e) => {
+      e.preventDefault();
+      state.player.y = clamp(state.player.y + e.deltaY * WHEEL_SENSITIVITY, 0, H - PADDLE_H);
+    },
+    { passive: false }
+  );
+
   startBtn.addEventListener("click", () => startGame());
 
   function startGame() {
